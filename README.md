@@ -17,7 +17,7 @@
 
 ## Team
 
-[Ya boi / gal 1](https://github.com/)  | [Ya boi / gal 2](https://github.com/) | [Wesley Nguyen](https://github.com/boogiedev)
+[Feli Gentle](https://github.com/oro13)  | [Tu Pham](https://github.com/phamc4) | [Wesley Nguyen](https://github.com/boogiedev)
 ---|---|---|
 
 
