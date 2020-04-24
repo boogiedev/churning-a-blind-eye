@@ -11,8 +11,12 @@
 
 > *Why can't ride-sharing companies retain their customers?
   ... cause theyre always driving their customers away!* 
-![Joke Score](https://img.shields.io/badge/JOKE-10/10-green?style=flat-square)
-![Laugh Score](https://img.shields.io/badge/LAUGHTER-KNEE%20SLAPPER-brightgreen?style=flat-square)
+
+<p align="center">
+  <img src="https://img.shields.io/badge/JOKE-10/10-blue?style=flat-square"></img>
+  <img src="https://img.shields.io/badge/LAUGHTER-KNEE%20SLAPPER-brightgreen?style=flat-square"></img>
+  <img src="https://img.shields.io/badge/100%25-GLUTEN%20FREE-red?style=flat-square"></img>
+</p>
 
 ## Team
 
