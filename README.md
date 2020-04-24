@@ -47,11 +47,20 @@ A churn prediction case study focused on cleaning, analyzing, and modeling ride-
 
 ## Exploring Data
 
-- Fill!
+Intially going into this case study, we decided to tackle the task of cleaning the data and get a better understanding of the data together as a group. 
+
+![alt text](https://i.gyazo.com/d374ece0e6454f46cf15fe91d499b586.png)
 
 ### Initial Intake
 
-- Fill!
+Our immediate task was to identify the column we were trying to predict and transform it into a numerical column. 
+
+![alt text](https://i.gyazo.com/b5e55239362ee42f2090c68c7d9c61e0.png)
+
+Visualizing the NaN values in the columns, avg_rating_of_driver contianed the most NaN values with 16%. As a group, we decided to use sklearn's SimpleInputer to fill the NaN values with the mean of that column.
+
+![alt text](https://i.gyazo.com/36577607d61dadc29141180f4efd1581.png)
+
 
 ### Feature Engineering
 
