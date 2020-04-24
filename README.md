@@ -229,7 +229,17 @@ Outside of the features, we decided to use Grid Searching in order to tune the m
 
 <img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/grid_search_cv_process.png"> </img>
 
-<img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/grid_search_cv.png"> </img>
+After a whopping 67 minutes of the Cross Validated Grid Search, we finally obtained the what was percieved to be the best hyperparameters for this model. 
+
+```
+ 'learning_rate': 0.2,
+ 'loss': 'exponential',
+ 'max_depth': 4,
+ 'max_features': 9,
+ 'min_samples_leaf': 2,
+ 'n_estimators': 150
+```
+
 
 
 ---
