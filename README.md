@@ -53,13 +53,15 @@ Intially going into this case study, we decided to tackle the task of cleaning t
 
 ### Initial Intake
 
-Our immediate task was to identify the column we were trying to predict and transform it into a numerical column. 
+Our immediate task was to identify the column we were trying to predict and transform it into a numerical column. We also took care of the other such as phone and city by using get dummies.
 
-![alt text](https://i.gyazo.com/b5e55239362ee42f2090c68c7d9c61e0.png)
+![alt text](https://i.gyazo.com/36577607d61dadc29141180f4efd1581.png)
+
+![alt text](https://i.gyazo.com/26e5056af25e24766d00a9a68eb65ca6.png)
 
 Visualizing the NaN values in the columns, avg_rating_of_driver contianed the most NaN values with 16%. As a group, we decided to use sklearn's SimpleInputer to fill the NaN values with the mean of that column.
 
-![alt text](https://i.gyazo.com/36577607d61dadc29141180f4efd1581.png)
+![alt text](https://i.gyazo.com/b5e55239362ee42f2090c68c7d9c61e0.png)
 
 
 ### Feature Engineering
