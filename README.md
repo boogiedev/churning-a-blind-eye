@@ -5,9 +5,6 @@
   <img src="https://img.shields.io/github/commit-activity/m/boogiedev/churning-a-blind-eye?style=flat-square">
   <img src="https://img.shields.io/github/license/boogiedev/churning-a-blind-eye?style=flat-square">
 </p>
-<p align="center">
-  <img src="https://forthebadge.com/images/featured/featured-gluten-free.svg"></img>
-</p>
 
 > *Why can't ride-sharing companies retain their customers?
   ... cause theyre always driving their customers away!* 
