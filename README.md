@@ -110,7 +110,7 @@ OOB | MSE | R2 | ACC
 
 ### Evaluation
 
-- Fill!
+Honestly, the OOB score and the model's initial accuracy was not bad, although it could be improved with possibly a different model! We went ahead and trained a host of other models in order to get a comparison of what the differences were.
 
 ### Tuning
 
@@ -119,18 +119,29 @@ OOB | MSE | R2 | ACC
 ---
 ## Performance
 
-- Fill!
+#### GBC GRID CV MODEL
+Confusion Matrix
+| -        |       Predicted Negative      |  Predicted Positive |
+| ------------- |:-------------:| -----:|
+| Actual Negative | 2314 (TN)  | 1169 (FP)
+| Actual Positive | 867 (FN) | 5030 (TP)
+
+PRECISION / RECALL
+| -        |       Precision      |  Recall |
+| ------------- |:-------------:| -----:|
+| Best | 0.816  | 0.852
+
 
 ## Future Considerations
 
-- Fill
+
 
 ## License
 [MIT ©](https://choosealicense.com/licenses/mit/)
 
 ## Credits
 
-- Fill if other packages used
+Pandas Profiling
 
 ## Thanks
 
