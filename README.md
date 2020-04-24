@@ -222,7 +222,6 @@ Creating a baseline Gradient Boosting Classifier model, we were also able to plo
 
 <img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/pre_roc.png"> </img>
 
-
 ### Tuning
 
 Outside of the features, we decided to use Grid Searching in order to tune the model in order to get better predictions.
@@ -239,6 +238,8 @@ After a whopping 67 minutes of the Cross Validated Grid Search, we finally obtai
  'min_samples_leaf': 2,
  'n_estimators': 150
 ```
+
+<img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/post_roc.png"> </img>
 
 
 
