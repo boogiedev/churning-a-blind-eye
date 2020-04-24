@@ -95,6 +95,6 @@ A churn prediction case study focused on cleaning, analyzing, and modeling ride-
 
 Thanks to instructors at Galvanize Seattle (the puns were for you Andrew)
 
-Thanks to the generous work of [Pandas Profiling](https://github.com/pandas-profiling/pandas-profiling) team
+Thanks to the generous work of the [Pandas Profiling](https://github.com/pandas-profiling/pandas-profiling) team
 
 
