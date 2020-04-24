@@ -47,31 +47,11 @@ A churn prediction case study focused on cleaning, analyzing, and modeling ride-
 
 ## Exploring Data
 
-Intially going into this case study, we decided to tackle the task of cleaning the data and get a better understanding of the data together as a group.
+Intially going into this case study, we decided to tackle the task of cleaning the data and get a better understanding of the data together as a group. 
 
 ![alt text](https://i.gyazo.com/d374ece0e6454f46cf15fe91d499b586.png)
 
-
-
 ### Initial Intake
-
-HEAD
-Our immediate task was to identify the column we were trying to predict and transform it into a numerical column. To use our columns in our algorithims we used the get dummies function to transform our categorical data into numerical.
-
-
-![alt text](https://i.gyazo.com/1e5b834f86ed5c69799aa60f9e9adb1c.png)
-
-![alt text](https://i.gyazo.com/f6eb2ac21718057b4c6c3f126977d19a.png)
-
-![alt text](https://i.gyazo.com/36577607d61dadc29141180f4efd1581.png)
-
-
-
-
-Examining the columns further, we looked to see if any features we correlated with any other features. Upon investigation, we saw that surge_pct was highly correlated with avg_surge so we decided to drop avg_surge to attempt to decorrelate the data.
-
-
-
 
 Our immediate task was to identify the column we were trying to predict and transform it into a numerical column. We then One-Hot-Encoded the "phone" and "city" values by using the pd.get_dummies method.
 
@@ -79,10 +59,9 @@ Our immediate task was to identify the column we were trying to predict and tran
 
 ![alt text](https://i.gyazo.com/26e5056af25e24766d00a9a68eb65ca6.png)
 
-
 Visualizing the NaN values in the columns, avg_rating_of_driver contianed the most NaN values with 16%. As a group, we decided to use sklearn's SimpleInputer to fill the NaN values with the mean of that column.
 
-![alt text](https://i.gyazo.com/6f35dbfc2614c846ba1fcdaf1931e3b9.png)
+![alt text](https://i.gyazo.com/b5e55239362ee42f2090c68c7d9c61e0.png)
 
 
 ### Feature Engineering
@@ -229,10 +208,8 @@ def get_model_scores(X, y):
 
 ```
   
-  
-  
-</details>
 
+</details>
 
 
 <p align="center">
@@ -244,7 +221,12 @@ def get_model_scores(X, y):
 
 ### Tuning
 
-- Fill!
+Outside of the features, we decided to use Grid Searching in order to tune the model in order to get better predictions.
+
+<img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/grid_search_cv_process.png"> </img>
+
+<img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/grid_search_cv.png"> </img>
+
 
 ---
 ## Performance
