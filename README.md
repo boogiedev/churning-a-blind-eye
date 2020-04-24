@@ -217,6 +217,10 @@ def get_model_scores(X, y):
 </p>
 <img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/pre_model_scores.png"> </img>
 
+Creating a baseline Gradient Boosting Classifier model, we were also able to plot its ROC curve. Out of the box, it was able to obtain an AUC of 0.86, which seems to be pretty good. Let's see if we can do better!
+
+
+<img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/pre_roc.png"> </img>
 
 
 ### Tuning
