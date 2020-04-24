@@ -13,7 +13,7 @@ def data_cleaner(df):
     
     
     #Convert last_trip_date column to int
-    df['last_trip_date'] = df['last_trip_date'] >= '2014-06-01'
+    df['last_trip_date'] = df['last_trip_date'] <= '2014-06-01'
     df['last_trip_date'] = df['last_trip_date'].astype(int)
     df['luxury_car_user'] = df['luxury_car_user'].astype(int)
     
