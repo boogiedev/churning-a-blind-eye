@@ -6,7 +6,6 @@ from sklearn.impute import SimpleImputer
 
 
 def data_cleaner(df):
-    imputer = SimpleImputer()
     
     #Convert last_trip_date and signup_date to datetime object
     df['last_trip_date'] = pd.to_datetime(df['last_trip_date'])
@@ -21,6 +20,23 @@ def data_cleaner(df):
     
     #Drop Columns
     df.drop(columns=['signup_date'], inplace=True)
+    
+    #Rename target values
+    df.rename(columns={'last_trip_date': 'target'}, inplace=True)
+    
+    
+    
+    #Hot encode categorical features
+    df = pd.get_dummies(df, columns=['city', 'phone'])
+
+    # Fill in missing values
+    imputer = SimpleImputer()
+    df = pd.DataFrame(imputer.fit_transform(df), columns=df.columns)
+    
+    #Remove Duplicate Rows
+    df.drop_duplicates()
+    
+    
     
     return df
     
