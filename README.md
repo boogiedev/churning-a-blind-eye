@@ -30,7 +30,7 @@ Check [TEAM DEBRIEF](team_debrief.md) to get started
 - [Exploring Data](#exploring-data)
   - [Initial Intake](#initial-intake)
   - [Feature Engineering](#feature-engineering)
-  - [Visualzations](#visualizations)
+  - [Visualizations](#visualizations)
 - [Predictive Modeling](#predictive-modeling)
   - [Baseline](#baseline)
   - [Evaluation](#evaluation)
@@ -111,6 +111,13 @@ OOB | MSE | R2 | ACC
 ### Evaluation
 
 Honestly, the OOB score and the model's initial accuracy was not bad, although it could be improved with possibly a different model! We went ahead and trained a host of other models in order to get a comparison of what the differences were.
+
+<p align="center">
+  Using Other Models
+</p>
+<img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/pre_model_scores.png"> </img>
+
+
 
 ### Tuning
 
