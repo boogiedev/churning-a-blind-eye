@@ -55,7 +55,7 @@ Intially going into this case study, we decided to tackle the task of cleaning t
 
 ### Initial Intake
 
-<<<<<<< HEAD
+HEAD
 Our immediate task was to identify the column we were trying to predict and transform it into a numerical column. To use our columns in our algorithims we used the get dummies function to transform our categorical data into numerical.
 
 
@@ -72,12 +72,11 @@ Examining the columns further, we looked to see if any features we correlated wi
 
 
 
-=======
+
 Our immediate task was to identify the column we were trying to predict and transform it into a numerical column. We then One-Hot-Encoded the "phone" and "city" values by using the pd.get_dummies method.
 
 ![alt text](https://i.gyazo.com/36577607d61dadc29141180f4efd1581.png)
 
->>>>>>> 98bb37b244406e09f180d9235213117d40250f9d
 ![alt text](https://i.gyazo.com/26e5056af25e24766d00a9a68eb65ca6.png)
 
 
