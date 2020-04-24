@@ -29,7 +29,6 @@ Check [TEAM DEBRIEF](team_debrief.md) to get started
 - [Basic Overview](#basic-overview)
 - [Exploring Data](#exploring-data)
   - [Initial Intake](#initial-intake)
-  - [Feature Engineering](#feature-engineering)
   - [Visualizations](#visualizations)
 - [Predictive Modeling](#predictive-modeling)
   - [Baseline](#baseline)
@@ -55,7 +54,10 @@ Intially going into this case study, we decided to tackle the task of cleaning t
 
 Our immediate task was to identify the column we were trying to predict and transform it into a numerical column. We then One-Hot-Encoded the "phone" and "city" values by using the pd.get_dummies method.
 
+![alt text](https://i.gyazo.com/f6eb2ac21718057b4c6c3f126977d19a.png)
+
 ![alt text](https://i.gyazo.com/36577607d61dadc29141180f4efd1581.png)
+
 
 ![alt text](https://i.gyazo.com/26e5056af25e24766d00a9a68eb65ca6.png)
 
@@ -64,13 +66,9 @@ Visualizing the NaN values in the columns, avg_rating_of_driver contianed the mo
 ![alt text](https://i.gyazo.com/b5e55239362ee42f2090c68c7d9c61e0.png)
 
 
-### Feature Engineering
-
-
-
 ### Visualzations
 
-- Fill!
+![alt text](media/churn_pie_chart.png)
 
 ---
 ## Predictive Modeling
@@ -217,10 +215,6 @@ def get_model_scores(X, y):
 </p>
 <img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/pre_model_scores.png"> </img>
 
-Creating a baseline Gradient Boosting Classifier model, we were also able to plot its ROC curve. Out of the box, it was able to obtain an AUC of 0.86, which seems to be pretty good. Let's see if we can do better!
-
-
-<img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/pre_roc.png"> </img>
 
 
 ### Tuning
@@ -229,17 +223,7 @@ Outside of the features, we decided to use Grid Searching in order to tune the m
 
 <img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/grid_search_cv_process.png"> </img>
 
-After a whopping 67 minutes of the Cross Validated Grid Search, we finally obtained the what was percieved to be the best hyperparameters for this model. 
-
-```
- 'learning_rate': 0.2,
- 'loss': 'exponential',
- 'max_depth': 4,
- 'max_features': 9,
- 'min_samples_leaf': 2,
- 'n_estimators': 150
-```
-
+<img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/grid_search_cv.png"> </img>
 
 
 ---
