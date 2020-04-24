@@ -19,7 +19,10 @@
 
 [Ya boi / gal 1](https://github.com/)  | [Ya boi / gal 2](https://github.com/) | [Wesley Nguyen](https://github.com/boogiedev)
 ---|---|---|
-
+<p align="center">
+    Check [TEAM DEBRIEF](team_debrief.md) to get started
+</p>
+ 
  
 ## Table of Contents
 
