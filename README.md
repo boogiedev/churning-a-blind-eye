@@ -61,16 +61,14 @@ Our immediate task was to identify the column we were trying to predict and tran
 
 Visualizing the NaN values in the columns, avg_rating_of_driver contianed the most NaN values with 16%. As a group, we decided to use sklearn's SimpleInputer to fill the NaN values with the mean of that column.
 
-![alt text](https://i.gyazo.com/b5e55239362ee42f2090c68c7d9c61e0.png)
+<img src="https://i.gyazo.com/b5e55239362ee42f2090c68c7d9c61e0.png" width="800"> </img>
 
 
 ### Feature Engineering
 
 
-
 ### Visualzations
 
-- Fill!
 
 ---
 ## Predictive Modeling
