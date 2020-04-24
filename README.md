@@ -53,12 +53,9 @@ Intially going into this case study, we decided to tackle the task of cleaning t
 
 ### Initial Intake
 
-Our immediate task was to identify the column we were trying to predict and transform it into a numerical column. We also took care of the other such as phone and city by using get dummies.
+Our immediate task was to identify the column we were trying to predict and transform it into a numerical column. We then One-Hot-Encoded the "phone" and "city" values by using the pd.get_dummies method.
 
 ![alt text](https://i.gyazo.com/36577607d61dadc29141180f4efd1581.png)
-
-
-Examining the columns further, we looked to see if any features we correlated with any other features. Upon investigation, we saw that surge_pct was highly correlated with avg_surge so we decided to drop avg_surge to 
 
 ![alt text](https://i.gyazo.com/26e5056af25e24766d00a9a68eb65ca6.png)
 
@@ -69,7 +66,7 @@ Visualizing the NaN values in the columns, avg_rating_of_driver contianed the mo
 
 ### Feature Engineering
 
-- Fill!
+
 
 ### Visualzations
 
@@ -78,11 +75,38 @@ Visualizing the NaN values in the columns, avg_rating_of_driver contianed the mo
 ---
 ## Predictive Modeling
 
-- Fill!
 
 ### Baseline
 
-- Fill!
+Settling on a baseline model of a Random Forest Classifier, we uncovered metrics such as feature importance, out-of-bag error, and the model's initial accuracy predicitons.
+
+```python
+# Create X, y arrays from dataframe
+X = churn
+y = churn.pop("target")
+
+# Train Test Split Data
+X_train, X_test, y_train, y_test = train_test_split(X, y)
+
+# Create Random Forest Model
+model_rf = RandomForestClassifier(
+                            oob_score=True,
+                            max_features=3)
+# Fit Data
+model_rf.fit(X_train, y_train)
+
+# Use Helper function to get score
+get_score(model_rf, X_train, y_train)
+```
+OOB | MSE | R2 | ACC
+---|---|---|---|
+0.7469 | 0.2538 | -0.088 | 0.744
+
+<p align="center">
+  Feature Importances
+</p>
+
+<img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/feature_importance.png"> </img>
 
 ### Evaluation
 
