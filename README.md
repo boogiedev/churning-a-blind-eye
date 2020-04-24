@@ -211,6 +211,23 @@ def get_model_scores(X, y):
 
 </details>
 
+```python
+# Create X, y arrays from dataframe
+X = churn
+y = churn.pop("target")
+
+# Train Test Split Data
+X_train, X_test, y_train, y_test = train_test_split(X, y)
+
+# Create Random Forest Model
+model_gb = GradientBoostingClassifier()
+
+# Fit Data
+model_gb.fit(X_train, y_train)
+
+# Use Helper function to get score
+get_score(model_rf, X_train, y_train)
+```
 
 <p align="center">
   Using Other Models
