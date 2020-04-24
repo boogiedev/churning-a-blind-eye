@@ -30,7 +30,7 @@ Check [TEAM DEBRIEF](team_debrief.md) to get started
 - [Exploring Data](#exploring-data)
   - [Initial Intake](#initial-intake)
   - [Feature Engineering](#feature-engineering)
-  - [Visualzations](#visualizations)
+  - [Visualizations](#visualizations)
 - [Predictive Modeling](#predictive-modeling)
   - [Baseline](#baseline)
   - [Evaluation](#evaluation)
@@ -132,7 +132,116 @@ OOB | MSE | R2 | ACC
 
 ### Evaluation
 
-- Fill!
+Honestly, the OOB score and the model's initial accuracy was not bad, although it could be improved with possibly a different model! We went ahead and trained a host of other models in order to get a comparison of what the differences were. A simple, succinct and handy function was used to compare all of these models against each other. Click the tab below if you would like to see.
+
+
+<details>
+  <summary>
+    <b> Model Comparison Code </b>  
+  </summary>
+  
+```python
+def get_model_scores(X, y):
+    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=50)    
+    #Fit the logistic Regression Model
+    logmodel = LogisticRegression(random_state = 50)
+    logmodel.fit(X_train,y_train)
+
+    #Predict the value for new, unseen data
+    pred = logmodel.predict(X_test)
+
+    # Find Accuracy using accuracy_score method
+    logmodel_accuracy = round(accuracy_score(y_test, pred) * 100, 2)
+
+    # Scaler
+    scaler = MinMaxScaler()
+
+    #Fit the K-Nearest Neighbor Model
+    knnmodel = KNeighborsClassifier(n_neighbors=20, metric='minkowski', p=2) #p=2 represents Euclidean distance, p=1 represents Manhattan Distance
+    knnmodel.fit(scaler.fit_transform(X_train), y_train) 
+
+    #Predict the value for new, unseen data
+    knn_pred = knnmodel.predict(X_test)
+
+    # Find Accuracy using accuracy_score method
+    knn_accuracy = round(accuracy_score(y_test, knn_pred) * 100, 2)
+
+    #Fit the Decision Tree Classification Model
+    dtmodel = DecisionTreeClassifier(criterion = "gini", random_state = 50)
+    dtmodel.fit(X_train, y_train) 
+
+    #Predict the value for new, unseen data
+    dt_pred = dtmodel.predict(X_test)
+
+    # Find Accuracy using accuracy_score method
+    dt_accuracy = round(accuracy_score(y_test, dt_pred) * 100, 2)
+
+    #Fit the Random Forest Classification Model
+    rfmodel = RandomForestClassifier(n_estimators = 100, criterion = 'entropy', random_state = 0)
+    rfmodel.fit(X_train, y_train) 
+
+    #Predict the value for new, unseen data
+    rf_pred = rfmodel.predict(X_test)
+
+    # Find Accuracy using accuracy_score method
+    rf_accuracy = round(accuracy_score(y_test, rf_pred) * 100, 2)
+
+    #Fit the Gradient Boosted Classification Model
+    gbmodel = GradientBoostingClassifier(random_state=50)
+    gbmodel.fit(X_train,y_train)
+
+    #Predict the value for new, unseen data
+    pred = gbmodel.predict(X_test)
+
+    # Find Accuracy using accuracy_score method
+    gbmodel_accuracy = round(accuracy_score(y_test, pred) * 100, 2)
+
+    #Fit the Gradient Boosted Classification Model
+    gbmodel_grid = GradientBoostingClassifier(learning_rate=0.1,
+                                         max_depth=6,
+                                         max_features=0.3,
+                                         min_samples_leaf=10,
+                                         n_estimators=100,
+                                         random_state=50)
+    gbmodel_grid.fit(X_train,y_train)
+
+    #Predict the value for new, unseen data
+    pred = gbmodel_grid.predict(X_test)
+
+    # Find Accuracy using accuracy_score method
+    gbmodel_grid_accuracy = round(accuracy_score(y_test, pred) * 100, 2)
+    
+    #Fit the Gradient Boosted Classification Model
+    gbmodel_grid_cv = GradientBoostingClassifier(learning_rate=0.2,
+                                         max_depth=4,
+                                         max_features=9,
+                                         min_samples_leaf=2,
+                                         n_estimators=150,
+                                         random_state=50)
+    gbmodel_grid_cv.fit(X_train,y_train)
+
+    #Predict the value for new, unseen data
+    pred = gbmodel_grid_cv.predict(X_test)
+
+    # Find Accuracy using accuracy_score method
+    gbmodel_grid_cv_accuracy = round(accuracy_score(y_test, pred) * 100, 2)
+    
+    return [logmodel_accuracy, knn_accuracy, dt_accuracy, rf_accuracy, gbmodel_accuracy, gbmodel_grid_accuracy, gbmodel_grid_cv_accuracy]
+
+```
+  
+  
+  
+</details>
+
+
+
+<p align="center">
+  Using Other Models
+</p>
+<img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/pre_model_scores.png"> </img>
+
+
 
 ### Tuning
 
@@ -141,18 +250,29 @@ OOB | MSE | R2 | ACC
 ---
 ## Performance
 
-- Fill!
+#### GBC GRID CV MODEL
+Confusion Matrix
+| -        |       Predicted Negative      |  Predicted Positive |
+| ------------- |:-------------:| -----:|
+| Actual Negative | 2314 (TN)  | 1169 (FP)
+| Actual Positive | 867 (FN) | 5030 (TP)
+
+PRECISION / RECALL
+| -        |       Precision      |  Recall |
+| ------------- |:-------------:| -----:|
+| Best | 0.816  | 0.852
+
 
 ## Future Considerations
 
-- Fill
+
 
 ## License
 [MIT ©](https://choosealicense.com/licenses/mit/)
 
 ## Credits
 
-- Fill if other packages used
+Pandas Profiling
 
 ## Thanks
 
