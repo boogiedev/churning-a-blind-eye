@@ -61,6 +61,7 @@ Our immediate task was to identify the column we were trying to predict and tran
 
 Visualizing the NaN values in the columns, avg_rating_of_driver contianed the most NaN values with 16%. As a group, we decided to use sklearn's SimpleInputer to fill the NaN values with the mean of that column.
 
+
 <img src="https://i.gyazo.com/b5e55239362ee42f2090c68c7d9c61e0.png" width="600"> </img>
 
 
@@ -69,6 +70,7 @@ Visualizing the NaN values in the columns, avg_rating_of_driver contianed the mo
 
 ### Visualzations
 
+<img src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/churn_pie_chart.png"> </img>
 
 ---
 ## Predictive Modeling
