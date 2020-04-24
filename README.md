@@ -256,6 +256,12 @@ After a whopping 67 minutes of the Cross Validated Grid Search, we finally obtai
  'n_estimators': 150
 ```
 
+We then checked the feature importances of the new model with the painstakinly tuned hyperparameters and there were differences! Keep in mind as well, we also chopped off outliers from "surge_pct".
+
+<img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/gdb_feature_imp.png"> </img>
+
+A new ROC curve was plotted and there was a slight improvement to the model as seen with a higher AUC.
+
 <img align="center" src="https://github.com/boogiedev/churning-a-blind-eye/blob/master/media/post_roc.png"> </img>
 
 
