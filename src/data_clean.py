@@ -19,15 +19,16 @@ def data_cleaner(df):
     
     
     #Drop Columns
-    df.drop(columns=['signup_date'], inplace=True)
+    df.drop(columns=['signup_date', 'avg_surge', 'phone'], inplace=True)
     
     #Rename target values
     df.rename(columns={'last_trip_date': 'target'}, inplace=True)
     
-    
+    #Filter out outliers
+    df = df[df['surge_pct'] < 50]
     
     #Hot encode categorical features
-    df = pd.get_dummies(df, columns=['city', 'phone'])
+    df = pd.get_dummies(df, columns=['city'])
 
     # Fill in missing values
     imputer = SimpleImputer()
