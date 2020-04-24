@@ -7,7 +7,7 @@
 </p>
 
 > *Why can't ride-sharing companies retain their customers?
-  ... cause theyre always driving their customers away!* 
+  ... cause they're always driving their customers away!* 
 
 <p align="center">
   <img src="https://img.shields.io/badge/JOKE-10/10-blue?style=flat-square"></img>
