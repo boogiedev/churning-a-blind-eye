@@ -57,6 +57,9 @@ Our immediate task was to identify the column we were trying to predict and tran
 
 ![alt text](https://i.gyazo.com/36577607d61dadc29141180f4efd1581.png)
 
+
+Examining the columns further, we looked to see if any features we correlated with any other features. Upon investigation, we saw that surge_pct was highly correlated with avg_surge so we decided to drop avg_surge to 
+
 ![alt text](https://i.gyazo.com/26e5056af25e24766d00a9a68eb65ca6.png)
 
 Visualizing the NaN values in the columns, avg_rating_of_driver contianed the most NaN values with 16%. As a group, we decided to use sklearn's SimpleInputer to fill the NaN values with the mean of that column.
