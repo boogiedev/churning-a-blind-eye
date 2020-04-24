@@ -47,24 +47,36 @@ A churn prediction case study focused on cleaning, analyzing, and modeling ride-
 
 ## Exploring Data
 
-Intially going into this case study, we decided to tackle the task of cleaning the data and get a better understanding of the data together as a group. 
+Intially going into this case study, we decided to tackle the task of cleaning the data and get a better understanding of the data together as a group.
 
 ![alt text](https://i.gyazo.com/d374ece0e6454f46cf15fe91d499b586.png)
 
+
+
 ### Initial Intake
 
-Our immediate task was to identify the column we were trying to predict and transform it into a numerical column. We also took care of the other such as phone and city by using get dummies.
+Our immediate task was to identify the column we were trying to predict and transform it into a numerical column. To use our columns in our algorithims we used the get dummies function to transform our categorical data into numerical.
+
+
+![alt text](https://i.gyazo.com/1e5b834f86ed5c69799aa60f9e9adb1c.png)
+
+![alt text](https://i.gyazo.com/f6eb2ac21718057b4c6c3f126977d19a.png)
 
 ![alt text](https://i.gyazo.com/36577607d61dadc29141180f4efd1581.png)
 
 
-Examining the columns further, we looked to see if any features we correlated with any other features. Upon investigation, we saw that surge_pct was highly correlated with avg_surge so we decided to drop avg_surge to 
+
+
+Examining the columns further, we looked to see if any features we correlated with any other features. Upon investigation, we saw that surge_pct was highly correlated with avg_surge so we decided to drop avg_surge to attempt to decorrelate the data.
+
+
 
 ![alt text](https://i.gyazo.com/26e5056af25e24766d00a9a68eb65ca6.png)
 
+
 Visualizing the NaN values in the columns, avg_rating_of_driver contianed the most NaN values with 16%. As a group, we decided to use sklearn's SimpleInputer to fill the NaN values with the mean of that column.
 
-![alt text](https://i.gyazo.com/b5e55239362ee42f2090c68c7d9c61e0.png)
+![alt text](https://i.gyazo.com/6f35dbfc2614c846ba1fcdaf1931e3b9.png)
 
 
 ### Feature Engineering
