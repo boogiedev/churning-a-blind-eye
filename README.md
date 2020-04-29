@@ -43,27 +43,40 @@ Check [TEAM DEBRIEF](team_debrief.md) to get started
 
 ## Basic Overview
 
-A churn prediction case study focused on cleaning, analyzing, and modeling ride-sharing data aimed at seeking the best predictors for retention
+A churn prediction case study focused on cleaning, analyzing, and modeling ride-sharing data aimed at seeking the best predictors for retention. A sample dataset of a cohort of users who signed up for an account in Januaray 2014 was used. We considered a user retained if they were "active" (i.e. took a trip) in the preceding 30 days from the day the data was pulled. For this dataset, a user is "active" if they have taken a trip since June 1, 2014 as the data was pulled on July 1, 2014.
 
 ## Exploring Data
 
 Intially going into this case study, we decided to tackle the task of cleaning the data and get a better understanding of the data together as a group. 
 
-![alt text](https://i.gyazo.com/d374ece0e6454f46cf15fe91d499b586.png)
+Here is a detailed description of the data:
+
+- `city`: city this user signed up in phone: primary device for this user
+- `signup_date`: date of account registration; in the form `YYYYMMDD`
+- `last_trip_date`: the last time this user completed a trip; in the form `YYYYMMDD`
+- `avg_dist`: the average distance (in miles) per trip taken in the first 30 days after signup
+- `avg_rating_by_driver`: the rider’s average rating over all of their trips 
+- `avg_rating_of_driver`: the rider’s average rating of their drivers over all of their trips 
+- `surge_pct`: the percent of trips taken with surge multiplier > 1 
+- `avg_surge`: The average surge multiplier over all of this user’s trips 
+- `trips_in_first_30_days`: the number of trips this user took in the first 30 days after signing up 
+- `luxury_car_user`: TRUE if the user took a luxury car in their first 30 days; FALSE otherwise 
+- `weekday_pct`: the percent of the user’s trips occurring during a weekday
+
 
 ### Initial Intake
 
-Our immediate task was to identify the column we were trying to predict and transform it into a numerical column. We then One-Hot-Encoded the "phone" and "city" values by using the pd.get_dummies method.
+Our immediate task was to identify the column we were trying to predict and transform it into a numerical column. Our target column is last_trip_date which was converted to a datetime type and then transformed into a numerical column where churned useres were assigned a 1 and active users a 0. 
 
-![alt text](https://i.gyazo.com/36577607d61dadc29141180f4efd1581.png)
-
-![alt text](https://i.gyazo.com/26e5056af25e24766d00a9a68eb65ca6.png)
-
-Visualizing the NaN values in the columns, avg_rating_of_driver contianed the most NaN values with 16%. As a group, we decided to use sklearn's SimpleInputer to fill the NaN values with the mean of that column.
-
+Visualizing the NaN values in the columns, avg_rating_of_driver contianed the most NaN values with 16%. Since we decided to intially predict with a Random Forest Classifier, we dropped these NaN rows instead of filling them with a mean value. 
 
 <img src="https://i.gyazo.com/b5e55239362ee42f2090c68c7d9c61e0.png" width="600"> </img>
 
+In an attempt to decorrelate features we looked at the correlation matrix and found surge_pct and average_surge to be highly correlated so we decided to drop average_surge. Then we One Hot Encoded the city column as a final step to prepare our data to be used in a predictive model.
+
+![alt text](https://i.gyazo.com/26e5056af25e24766d00a9a68eb65ca6.png)
+
+![alt text](https://i.gyazo.com/5bbe790a7c8c3522faffc918ecf2817c.png)
 
 ### Feature Engineering
 
@@ -287,7 +300,7 @@ PRECISION / RECALL
 
 ## Future Considerations
 
-
+Ideally, the predictive model would be trained on a online system. As the data gets updated and repulled this would improve our predictive model overtime and be updating active users to churned users and visa versa. 
 
 ## License
 [MIT ©](https://choosealicense.com/licenses/mit/)
