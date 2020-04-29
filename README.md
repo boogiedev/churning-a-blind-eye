@@ -76,6 +76,8 @@ In an attempt to decorrelate features we looked at the correlation matrix and fo
 
 ![alt text](https://i.gyazo.com/26e5056af25e24766d00a9a68eb65ca6.png)
 
+Here is the data after One Hot Encoding and Cleaning. The converted numerical last_trip_date column was renamed to target:
+
 ![alt text](https://i.gyazo.com/5bbe790a7c8c3522faffc918ecf2817c.png)
 
 ### Feature Engineering
